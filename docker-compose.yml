@@ -22,6 +22,7 @@ services:
       POSTGRES_DB: ${DATABASE_NAME:-postgres}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_HOST_AUTH_METHOD: true
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USERNAME:-postgres}"]
       interval: 5s
